@@ -19,7 +19,7 @@ services:
             retries: 10
 
     coches-api:
-        build: .
+        image: sebastianmendoza/coches-api:1.0
         container_name: coches-api
         depends_on:
             mysql:
