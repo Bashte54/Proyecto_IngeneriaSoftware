@@ -1,0 +1,32 @@
+services:
+    mysql:
+        image: mysql:8
+        container_name: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: Xiomara28&
+            MYSQL_DATABASE: modulo9
+            MYSQL_USER: userdb
+            MYSQL_PASSWORD: user.1234
+        ports:
+            - "3307:3306"
+        volumes:
+            - ./midatos:/var/lib/mysql
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pXiomara28&"]
+            interval: 5s
+            timeout: 10s
+            retries: 10
+
+    coches-api:
+        build: .
+        container_name: coches-api
+        depends_on:
+            mysql:
+                condition: service_healthy
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/modulo9
+            SPRING_DATASOURCE_USERNAME: root
+            SPRING_DATASOURCE_PASSWORD: Xiomara28&
+        ports:
+            - "8081:8080"
