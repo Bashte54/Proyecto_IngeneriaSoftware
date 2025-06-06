@@ -1,0 +1,7 @@
+mx\unam\aragon\ico\is\cochesapi\controllers\CocheController.class
+mx\unam\aragon\ico\is\cochesapi\entitys\Coche.class
+mx\unam\aragon\ico\is\cochesapi\services\CocheServiceImpl.class
+mx\unam\aragon\ico\is\cochesapi\exepciones\ManejadorGlobalErrores.class
+mx\unam\aragon\ico\is\cochesapi\repositories\CocheRepository.class
+mx\unam\aragon\ico\is\cochesapi\CochesApplication.class
+mx\unam\aragon\ico\is\cochesapi\services\interfaz\CocheService.class
